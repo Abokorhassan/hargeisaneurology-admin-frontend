@@ -8,7 +8,6 @@ Table of Contents
 04.Error Page
 */
 
-
 module.exports = {
   /* 01.General */
   "general.copyright": "Gogo React © 2018 All Rights Reserved.",
@@ -27,6 +26,11 @@ module.exports = {
   "user.buy": "BUY",
   "user.username": "Username",
 
+  "user.first_name": "First Name",
+  "user.second_name": "Second Name",
+  "user.third_name": "Third Name",
+  "user.role": "Role",
+
   /* 03.Menu */
   "menu.app": "Home",
   "menu.dashboards": "Dashboards",
@@ -39,12 +43,12 @@ module.exports = {
   "menu.chat": "Chat",
   "menu.survey": "Survey",
   "menu.todo": "Todo",
-  "menu.search" :"Search",
+  "menu.search": "Search",
   "menu.docs": "Docs",
   "menu.blank-page": "Blank Page",
 
- /* 04.Error Page */
- "pages.error-title": "Ooops... looks like an error occurred!",
- "pages.error-code": "Error code",
- "pages.go-back-home": "GO BACK HOME",
+  /* 04.Error Page */
+  "pages.error-title": "Ooops... looks like an error occurred!",
+  "pages.error-code": "Error code",
+  "pages.go-back-home": "GO BACK HOME"
 };

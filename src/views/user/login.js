@@ -9,24 +9,28 @@ import { Formik, Form, Field } from "formik";
 import { loginUser } from "../../redux/actions";
 import { Colxx } from "../../components/common/CustomBootstrap";
 import IntlMessages from "../../helpers/IntlMessages";
+
 class Login extends Component {
   constructor(props) {
     super(props);
+
+    // lOCAL STATES
     this.state = {
-      email: "demo@gogo.com",
-      password: "gogo123"
+      email: "",
+      password: ""
     };
   }
 
-  onUserLogin = (values) => {
+  // FIRING LOGIN
+  onUserLogin = values => {
     if (!this.props.loading) {
       if (values.email !== "" && values.password !== "") {
         this.props.loginUser(values, this.props.history);
       }
     }
-  }
+  };
 
-  validateEmail = (value) => {
+  validateEmail = value => {
     let error;
     if (!value) {
       error = "Please enter your email address";
@@ -34,9 +38,9 @@ class Login extends Component {
       error = "Invalid email address";
     }
     return error;
-  }
+  };
 
-  validatePassword = (value) => {
+  validatePassword = value => {
     let error;
     if (!value) {
       error = "Please enter your password";
@@ -44,8 +48,9 @@ class Login extends Component {
       error = "Value must be longer than 3 characters";
     }
     return error;
-  }
+  };
 
+  // WARNING WITH UPDATES
   componentDidUpdate() {
     if (this.props.error) {
       NotificationManager.warning(
@@ -54,14 +59,14 @@ class Login extends Component {
         3000,
         null,
         null,
-        ''
+        ""
       );
     }
   }
 
   render() {
     const { password, email } = this.state;
-    const initialValues = {email,password};
+    const initialValues = { email, password };
 
     return (
       <Row className="h-100">
@@ -73,7 +78,7 @@ class Login extends Component {
                 Please use your credentials to login.
                 <br />
                 If you are not a member, please{" "}
-                <NavLink to={`/register`} className="white">
+                <NavLink to={`/user/register`} className="white">
                   register
                 </NavLink>
                 .
@@ -86,12 +91,15 @@ class Login extends Component {
               <CardTitle className="mb-4">
                 <IntlMessages id="user.login-title" />
               </CardTitle>
-
-              <Formik
-                initialValues={initialValues}
-                onSubmit={this.onUserLogin}>
+              {
+                // FORM USING FORMIK REACT
+              }
+              <Formik initialValues={initialValues} onSubmit={this.onUserLogin}>
                 {({ errors, touched }) => (
                   <Form className="av-tooltip tooltip-label-bottom">
+                    {
+                      // EMAIL
+                    }
                     <FormGroup className="form-group has-float-label">
                       <Label>
                         <IntlMessages id="user.email" />
@@ -107,6 +115,10 @@ class Login extends Component {
                         </div>
                       )}
                     </FormGroup>
+
+                    {
+                      // PASSWORD
+                    }
                     <FormGroup className="form-group has-float-label">
                       <Label>
                         <IntlMessages id="user.password" />
@@ -123,25 +135,31 @@ class Login extends Component {
                         </div>
                       )}
                     </FormGroup>
+
                     <div className="d-flex justify-content-between align-items-center">
                       <NavLink to={`/user/forgot-password`}>
                         <IntlMessages id="user.forgot-password-question" />
                       </NavLink>
                       <Button
                         color="primary"
-                        className={`btn-shadow btn-multiple-state ${this.props.loading ? "show-spinner" : ""}`}
+                        className={`btn-shadow btn-multiple-state ${
+                          this.props.loading ? "show-spinner" : ""
+                        }`}
                         size="lg"
                       >
+                        {
+                          // BUTTON SPIINER LOADING
+                        }
                         <span className="spinner d-inline-block">
                           <span className="bounce1" />
                           <span className="bounce2" />
                           <span className="bounce3" />
                         </span>
-                        <span className="label"><IntlMessages id="user.login-button" /></span>
+                        <span className="label">
+                          <IntlMessages id="user.login-button" />
+                        </span>
                       </Button>
                     </div>
-
-
                   </Form>
                 )}
               </Formik>
@@ -157,9 +175,6 @@ const mapStateToProps = ({ authUser }) => {
   return { user, loading, error };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    loginUser
-  }
-)(Login);
+export default connect(mapStateToProps, {
+  loginUser
+})(Login);
