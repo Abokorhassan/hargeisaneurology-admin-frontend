@@ -78,7 +78,7 @@ function* loginWithEmailPassword({ payload }) {
     const loginUser = yield call(loginWithEmailPasswordAsync, email, password);
     if (!loginUser.error) {
       localStorage.setItem(
-        "token",
+        "user_id",
         JSON.stringify(loginUser.token.access_token)
       );
       yield put(loginUserSuccess(loginUser.token.access_token));
@@ -165,7 +165,7 @@ function* registerWithEmailPassword({ payload }) {
     );
     if (!registerUser.error) {
       localStorage.setItem(
-        "token",
+        "user_id",
         JSON.stringify(registerUser.token.access_token)
       );
       yield put(registerUserSuccess(registerUser.token.access_token));
@@ -194,7 +194,7 @@ function* logout({ payload }) {
   const { history } = payload;
   try {
     yield call(logoutAsync, history);
-    localStorage.removeItem("token");
+    localStorage.removeItem("user_id");
   } catch (error) {}
 }
 
