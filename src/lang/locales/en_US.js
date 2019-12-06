@@ -47,6 +47,8 @@ module.exports = {
   "menu.docs": "Docs",
   "menu.blank-page": "Blank Page",
 
+  "menu.doctor":"Doctor",
+
   /* 04.Error Page */
   "pages.error-title": "Ooops... looks like an error occurred!",
   "pages.error-code": "Error code",

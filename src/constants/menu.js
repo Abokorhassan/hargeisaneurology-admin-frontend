@@ -9,7 +9,7 @@ const data = [
         icon: "simple-icon-paper-plane",
         label: "menu.start",
         to: "/app/gogo/start"
-      }     
+      }
     ]
   },
   {
@@ -26,6 +26,12 @@ const data = [
     ]
   },
   {
+    id: "doctor",
+    icon: "icofont-doctor",
+    label: "menu.doctor",
+    to: "/app/doctor"
+  },
+  {
     id: "blankpage",
     icon: "iconsminds-bucket",
     label: "menu.blank-page",
@@ -36,7 +42,7 @@ const data = [
     icon: "iconsminds-library",
     label: "menu.docs",
     to: "https://gogo-react-docs.coloredstrategies.com/",
-    newWindow:true
+    newWindow: true
   }
 ];
 export default data;
