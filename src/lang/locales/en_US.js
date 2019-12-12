@@ -47,10 +47,19 @@ module.exports = {
   "menu.docs": "Docs",
   "menu.blank-page": "Blank Page",
 
-  "menu.doctor":"Doctor",
+  // NEW
+  "menu.doctor": "Doctor",
 
   /* 04.Error Page */
   "pages.error-title": "Ooops... looks like an error occurred!",
   "pages.error-code": "Error code",
-  "pages.go-back-home": "GO BACK HOME"
+  "pages.go-back-home": "GO BACK HOME",
+
+  /* Doctors' Page */
+  "doctor.list": "Doctors",
+  "doctor.orderby": "Order By : ",
+  "doctor.add-new-doctor": "ADD DOCTOR",
+  "doctor.delete": "Delete",
+  "doctor.another-action": "Another action",
+  "doctor.display-options": "Display Options"
 };
