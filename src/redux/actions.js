@@ -24,6 +24,12 @@ export const MENU_CHANGE_DEFAULT_CLASSES = "MENU_CHANGE_DEFAULT_CLASSES";
 export const MENU_CHANGE_HAS_SUB_ITEM_STATUS =
   "MENU_CHANGE_HAS_SUB_ITEM_STATUS";
 
+/* DOCTOR */
+export const DOCTOR_FETCH = "DOCTOR_FETCH";
+export const DOCTOR_FETCH_SUCCESS = "DOCTOR_FETCH_SUCCESS";
+export const DOCTOR_FETCH_ERROR = "DOCTOR_FETCH_ERROR";
+
 export * from "./menu/actions";
 export * from "./settings/actions";
 export * from "./auth/actions";
+export * from "./doctor/actions";
